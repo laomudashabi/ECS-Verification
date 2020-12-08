@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Call AD COM server') {
       steps {
-        sh 'python3 API_AddLib.py'
+        sh 'python https://github.com/laomudashabi/ECS-Verification/blob/main/API_AddLib.py'
       }
     }
 
