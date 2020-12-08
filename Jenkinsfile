@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Call AD COM server') {
       steps {
-        sh 'API_AddLib.py\\'
+        sh 'python3 API_AddLib.py'
       }
     }
 
