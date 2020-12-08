@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'ECS_Verification'
+    }
+
+  }
   stages {
     stage('Call AD COM server') {
       steps {
