@@ -14,7 +14,7 @@ pipeline {
 
     stage('Print out') {
       steps {
-        bat 'echo ${TestScope}'
+        bat 'echo env.TestScope'
       }
     }
 
