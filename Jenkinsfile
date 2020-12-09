@@ -13,7 +13,7 @@ pipeline {
         bat 'echo The target path to store AD projects is: %TargetPath%'
       }
     }
-    
+
     stage('Call AD COM Server') {
       steps {
         bat(script: 'py -2.7 API_AddLib.py %TestScope% %TargetProject% %TargetPath%', returnStatus: true, returnStdout: true)
