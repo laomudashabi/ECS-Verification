@@ -12,5 +12,11 @@ pipeline {
       }
     }
 
+    stage('Print out') {
+      steps {
+        bat 'echo "${TestScope}"'
+      }
+    }
+
   }
 }
