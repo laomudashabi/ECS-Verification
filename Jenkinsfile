@@ -10,13 +10,14 @@ pipeline {
       steps {
         bat 'echo TestScope directory is: %TestScope%'
         bat 'echo The AD project loaded is: %TargetProject%'
-        bat 'echo The target path to store AD projects is: %TargetPath%'
+        bat 'echo The software package path is: %TargetPath%'
+        powershell 'echo The nodes under test are: %Nodes%'
       }
     }
 
     stage('Call AD COM Server') {
       steps {
-        bat(script: 'py -2.7 API_AddLib.py %TestScope% %TargetProject% %TargetPath%', returnStatus: true, returnStdout: true)
+        bat(script: 'py -2.7 ExecTestScope.py %TestScope% %TargetProject% %SWCollection% %TestObject% %Nodes%', returnStatus: true, returnStdout: true)
       }
     }
 
